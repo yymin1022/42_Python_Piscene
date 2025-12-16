@@ -16,7 +16,6 @@ def all_thing_is_obj(object: any) -> int:
         case _:
             result = "Type not found"
     
-    if result is not None:
-        print(result)
+    print(result)
 
     return 42
