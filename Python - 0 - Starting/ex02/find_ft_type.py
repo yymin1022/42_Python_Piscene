@@ -4,15 +4,15 @@ def all_thing_is_obj(object: any) -> int:
     result = None
     match object:
         case list():
-            result = f'List : {obj_type}'
+            result = f"List : {obj_type}"
         case tuple():
-            result = f'Tuple : {obj_type}'
+            result = f"Tuple : {obj_type}"
         case set():
-            result = f'Set : {obj_type}'
+            result = f"Set : {obj_type}"
         case dict():
-            result = f'Dict : {obj_type}'
+            result = f"Dict : {obj_type}"
         case str():
-            result = f'{object} is in the kitchen : {obj_type}'
+            result = f"{object} is in the kitchen : {obj_type}"
         case _:
             result = "Type not found"
     
