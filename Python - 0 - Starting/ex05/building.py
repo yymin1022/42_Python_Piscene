@@ -3,15 +3,16 @@ Exercise 05: building.py
 Count characters in a string
 (upper, lower, punctuation, space, digit).
 """
-import string
 import sys
 
 
-def analyze_text(text: string):
+def analyze_text(text: str):
     """
     Count characters in text from parameter
     (upper, lower, punctuation, space, digit)
     """
+    punctuation_chars = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
+
     upper_count = 0
     lower_count = 0
     punctuation_count = 0
@@ -23,7 +24,7 @@ def analyze_text(text: string):
             upper_count += 1
         elif char.islower():
             lower_count += 1
-        elif char in string.punctuation:
+        elif char in punctuation_chars:
             punctuation_count += 1
         elif char.isspace():
             space_count += 1
@@ -47,21 +48,23 @@ def main():
         text = None
 
         if len(args) > 2:
-            raise AssertionError('too many arguments')
+            raise AssertionError('more than one argument is provided')
         elif len(args) == 2:
             text = args[1]
         else:
             print("What is the text to count?")
             try:
                 text = sys.stdin.readline()
-                if not text:
-                    pass
             except KeyboardInterrupt:
-                pass
+                sys.exit(0)
+
+        if text is None:
+            sys.exit(1)
 
         analyze_text(text)
     except AssertionError as err:
         print(f'AssertionError: {err}')
+        sys.exit(1)
 
 
 if __name__ == "__main__":
