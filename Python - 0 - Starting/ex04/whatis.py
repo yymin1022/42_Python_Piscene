@@ -1,7 +1,7 @@
 import sys
 
 if len(sys.argv) == 1:
-    exit()
+    sys.exit()
 
 try:
     if len(sys.argv) > 2:
@@ -19,3 +19,4 @@ try:
         raise AssertionError('argument is not an integer')
 except AssertionError as err:
     print(f'AssertionError: {err}')
+    sys.exit(1)
