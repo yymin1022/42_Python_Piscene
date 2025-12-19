@@ -13,7 +13,7 @@ def NULL_not_found(object: any) -> int:
         case str() if not object:
             print(f"Empty: {obj_type}")
         case _:
-            print("Type not found")
+            print("Type not Found")
             return 1
 
     return 0
