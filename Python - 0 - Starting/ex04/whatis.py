@@ -11,9 +11,9 @@ try:
         num = int(sys.argv[1])
         
         if num % 2 == 0:
-            print("I\'m Even.")
+            print("I'm Even.")
         else:
-            print("I\'m Odd.")
+            print("I'm Odd.")
 
     except ValueError:
         raise AssertionError("argument is not an integer")
