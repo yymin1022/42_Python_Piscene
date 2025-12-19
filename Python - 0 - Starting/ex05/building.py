@@ -48,7 +48,7 @@ def main():
         text = None
 
         if len(args) > 2:
-            raise AssertionError('more than one argument is provided')
+            raise AssertionError("more than one argument is provided")
         elif len(args) == 2:
             text = args[1]
         else:
@@ -63,7 +63,7 @@ def main():
 
         analyze_text(text)
     except AssertionError as err:
-        print(f'AssertionError: {err}')
+        print(f"AssertionError: {err}")
         sys.exit(1)
 
 
